@@ -1,12 +1,17 @@
-const express = require('express');
-const connectToMongo = require('./db');
-const app = express();
+const express = require('express'),
+      connectToMongo = require('./db'),
+      authRoutes = require('./routes/auth'),
+      notesRoutes = require('./routes/notes'),
+      app = express()
+      
 
+//connection to mongoDB
 connectToMongo();
 
-app.get('/', (req, res) => {
-    res.send("hello world!");
-})
+//available routes
+app.use('/api/auth', authRoutes);
+app.use('/api/notes', notesRoutes);
+
 
 app.listen(3000, () => {
     console.log("listening in port 3000");
