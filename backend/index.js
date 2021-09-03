@@ -4,6 +4,7 @@ const express = require('express'),
       notesRoutes = require('./routes/notes'),
       app = express()
       
+app.use(express.json());
 
 //connection to mongoDB
 connectToMongo();
