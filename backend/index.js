@@ -14,7 +14,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/notes', notesRoutes);
 
 
-app.listen(3000, () => {
+app.listen(5000, () => {
     console.log("listening in port 3000");
 })
 
